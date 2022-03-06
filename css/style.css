@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/*  
+    ========== CSS INDEXING START HERE ==========
+
+                IMPORT FILES  
+                VARIABLES
+                GENERAL
+                TYPOGRAPHY
+                CONTAINER START
+                GRID START
+                HELPING CLASS START
+
+    ========== CSS INDEXING End HERE ==========
+*/
+  
+/* ==================================== VARIABLES ==================================== */
+:root {
+    --primary-color:#6053c9;
+    --secondary-color:#0a2f90;
+    --white:#FFFFFF;
+    --black:#000;
+    --yellow:#fbcc2d;
+    --container: 1220px;
+    --font-primary:'Open Sans', sans-serif;
+}
+/* ==================================== GENERAL ==================================== */
+*, :after, :before {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+em, strong, button, blockquote, small, strike, sub, sup, tt,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+      color: var(--navy);
+      font-family: var(--font-primary);
+      font-size: 14px;
+      line-height: 22px;
+    background-color: var(--sky-blue);
+    overflow-x: hidden;
+}
+svg,img {
+    max-width: 100%;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+      border-radius: 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -webkit-border-radius: none;
+      -moz-border-radius: none;
+      outline: none;
+}
+a{
+    color: var(--navy);
+}
+a,
+a:hover,
+a:focus,
+button,
+button:focus {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto;
+}
+::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+::selection {
+    background: rgba(34, 64, 102, 0.5);
+    color: var(--l-green);
+}
+::-moz-selection {
+    background: var(--l-green);
+    color: var(--white);
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    outline: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* ==================================== CONTAINER START ==================================== */
+.container--fluid {
+    max-width: 100%;
+}
+.container {
+    max-width: var(--container);
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: wrap;
+    -moz-box-lines: wrap;
+    box-lines: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+/* ==================================== CONTAINER END ==================================== */
+
+/* ==================================== GRID START ==================================== */
+.col-padding{
+    padding: 0 10px;
+}
+.col-cover {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-full {
+    -webkit-box-flex: 0 0 100%;
+    -moz-box-flex: 0 0 100%;
+    box-flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    -moz-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-two {
+    -webkit-box-flex: 0 0 50%;
+    -moz-box-flex: 0 0 50%;
+    box-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    -moz-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-three {
+    -webkit-box-flex: 0 0 33.333333%;
+    -moz-box-flex: 0 0 33.333333%;
+    box-flex: 0 0 33.333333%;
+    -webkit-flex: 0 0 33.333333%;
+    -moz-flex: 0 0 33.333333%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-four {
+    -webkit-box-flex: 0 0 25%;
+    -moz-box-flex: 0 0 25%;
+    box-flex: 0 0 25%;
+    -webkit-flex: 0 0 25%;
+    -moz-flex: 0 0 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-five {
+    -webkit-box-flex: 0 0 20%;
+    -moz-box-flex: 0 0 20%;
+    box-flex: 0 0 20%;
+    -webkit-flex: 0 0 20%;
+    -moz-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.col-six {
+    -webkit-box-flex: 0 0 16.666667%;
+    -moz-box-flex: 0 0 16.666667%;
+    box-flex: 0 0 16.666667%;
+    -webkit-flex: 0 0 16.666667%;
+    -moz-flex: 0 0 16.666667%;
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+/* ==================================== GRID END ==================================== */
+  
+  
+/* ==================================== HELPING CLASS START ==================================== */
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: wrap;
+    -moz-box-lines: wrap;
+    box-lines: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; 
+}
+.align-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    box-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-align: start; 
+}
+.align-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center; 
+}
+.align-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    box-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    -o-align-items: flex-end;
+    align-items: flex-end;
+    -ms-flex-align: end; 
+}
+.align-stretch {
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    box-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    -o-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch; 
+}
+.align-baseline {
+    -webkit-box-align: baseline;
+    -moz-box-align: baseline;
+    box-align: baseline;
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    -ms-align-items: baseline;
+    -o-align-items: baseline;
+    align-items: baseline;
+    -ms-flex-align: baseline; 
+}
+.justify-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start; 
+}
+.justify-center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; 
+}
+.justify-around {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    -ms-flex-pack: center; 
+}
+.justify-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify; 
+}
+.justify-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-pack: end; 
+}
+.flex-direction-column{
+    flex-direction: column;
+}
+.flex-direction-row{
+    flex-direction: row;
+}
+.float-l{ float: left; }
+.float-r{ float: right; }
+.float-clear{ clear: both; }
+
+.text-left{ text-align: left; }
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+.text-nowrap{ white-space: nowrap; }
+.text-lowercase{ text-transform: lowercase; }
+.text-uppercase{ text-transform: uppercase; }
+.text-capitalize{ text-transform: capitalize; }
+.text-deco-underline{ text-decoration: underline; }
+.mobile_only{display: none;}
+.list-style-none{ list-style: none; }
+.text-white{ color: var(--white); }
+.line-through{
+    text-decoration: line-through;
+}
+.btn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    background-color: #fbcc2d;
+    color: #0a2f90;
+    padding: 20px 70px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid #fbcc2d;
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    color: #fbcc2d;
+    background-color: #0b2f90;
+}
+/* ==================================== HELPING CLASS END ==================================== */
+
+/* ==================================== CUSTOM CSS START ==================================== */
+.main-block{
+    background-color: #0b2f90;
+    border-radius: 35px;
+}
+.card{
+    padding: 100px 0;
+}
+.card .top-label{
+    display: inline-block;
+    padding: 8px 15px;
+    font-weight: bold;
+    color: #233424;
+    background-color: #fbcc2d;
+    border-radius: 10px 10px 0 0;
+    margin-left: 80px;
+}
+.card .main-block-wrap{
+    padding: 50px;
+    background-color: #6053c9;
+    border-radius: 35px;
+}
+.card .main-block-wrap .course-tab-title{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.card .main-block-wrap .tab-title{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 50px;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 99px;
+    text-transform: capitalize;
+}
+.card .main-block-wrap .tab-title.active{
+    background-color: #083090;
+}
+.card .grade-select{
+    width: 180px;
+    padding: 10px 0;
+    -webkit-appearance: none;
+   -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background-image: url('../img/down-arrow.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right top 15px;
+}
+.card .grade-select option{
+    color: #000;
+}
+.card .grade-select-wrap{
+    margin-right: 70px;
+}
+.card-body-tab{
+    flex: 1;
+}
+.card-body-tab ul{
+    width: 100%;
+}
+.card-body-tab-wrap:not(:first-child){
+    display: none;
+}
+.footer-top-wrapper:not(:last-child){
+    display: none;
+}
+.monthly-table:not(:first-child){
+    display: none;
+}
+.card-body-tab li:not(:last-child) .card-body-tab-a{
+    margin-right: 20px;
+}
+.card-body-tab .card-body-tab-a{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 99px;
+}
+.card-body-tab .card-body-tab-a.active{
+    background-color: #083090;
+}
+.card .card-top-panel{
+    margin-bottom: 50px;
+}
+.card-numbers{
+    margin-bottom: 30px;
+}
+.card-numbers:not(:first-child){
+    display: none;
+}
+.card-numbers .card-number-row{
+    margin: 0 -35px;
+}
+.card-numbers .card-number-col{
+    padding: 0 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card-numbers .card-number-col:last-child{
+    flex: 2;
+}
+.card-numbers .card-number-text{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 99px;
+    margin-bottom: 10px;
+}
+.card-numbers .card-col-num{
+    display: block;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fbcc2d;
+    border-radius: 99px;
+}
+.card-topics .card-topic-head{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 99px;
+    margin-bottom: 20px;
+}
+.card-topics .card-topic-col h6{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fbcc2d;
+}
+.card-topics .card-topic-col li{
+    color: #fff;
+    font-weight: 500;
+}
+.main-footer{
+    padding: 35px;
+}
+.main-footer .main-footer-top-col-wrap{
+    position: relative;
+    padding-top: 25px;
+}
+.main-footer .main-footer-top-col-wrap h4{
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 99px;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+.main-footer .main-footer-top-col-wrap h4 .line-through{
+    font-size: 16px;
+}
+.main-footer .main-footer-top-col-wrap h4 span{
+    color: #fbcc2d;
+}
+.main-footer .main-footer-top-col-wrap .footer-top-label{
+    display: inline-block;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 3px 8px;
+    font-weight: 800;
+    border-radius: 5px;
+    color: #0b2f90;
+    position: absolute;
+    right: 0;
+    top: -25px;
+}
+.main-footer .main-footer-top-col-wrap p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+.main-footer-bottom{
+    margin-top: 30px;
+}
+.main-footer-bottom h6{
+    color: #fff;
+}
+.main-footer-bottom p{
+    color: #fff;
+    font-size: 12px;
+}
+.main-footer-bottom p a{
+    text-decoration: underline;
+}
+.main-footer-bottom .right-col{
+    margin-left: auto;
+}
+.monthly-table .mt-row{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #7b6fd1;
+    cursor: pointer;
+}
+.monthly-table .mt-row:not(:last-child){
+    margin-bottom: 15px;
+}
+.monthly-table .mt-row .check-col{
+    max-width: 10%;
+    width: 100%;
+}
+.monthly-table .mt-row .check-col .check-icon{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+}
+.monthly-table .mt-row.active .check-col .check-icon:after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    background-color: #6053c9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.monthly-table .mt-row .mnt{
+    font-size: 18px;
+    color: #fff;
+}
+.monthly-table .mt-row .mnt-desc{
+    color: #fff;
+}
+.monthly-table .mt-row .mt-col{
+    max-width: 30%;
+    width: 100%;
+}
+.monthly-table .mt-row .price-wrap .price{
+    color: #feb30a;
+    font-size: 22px;
+}
+.monthly-table .mt-row .price-wrap .price span{
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.monthly-table .mt-row .price-wrap .dics-label{
+    display: inline-block;
+    background-color: #6253d0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.monthly-table .mt-row  .session-wrap .session-prc{
+    color: #fff;
+    font-size: 18px;
+}
+.monthly-table .mt-row  .session-wrap .dics-label{
+    color: #fff;
+}
+/* ==================================== CUSTOM CSS END ==================================== */
+
+@media only screen and (max-width: 991px) {
+    .main-footer .main-footer-top-col{
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .main-footer .main-button-col{
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .card-numbers .card-number-col{
+        max-width: 33.33%;
+        flex: 0 0 33.33%;
+        margin-bottom: 30px;
+    }
+    .card-body-tab {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-top: 30px;
+        justify-content: flex-start;
+    }
+    .main-footer-bottom .right-col{
+        margin-left: 0;
+    }
+    .card-body-tab  ul{
+        justify-content: center;
+    }
+    .main-footer .main-footer-top-col-wrap{
+        justify-content: flex-start;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .btn{
+        padding: 15px 50px;
+    }
+    .card .top-label{
+        padding: 3px 15px;
+        margin-left: 30px;
+        margin-right: 110px;
+        font-size: 12px;
+    }
+    .main-block {
+        border-radius: 15px;
+    }
+    .main-footer .main-footer-top-col{
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .monthly-table .mt-row .check-col {
+        max-width: 60px;
+        flex: 0 0 60px;
+    }
+    .monthly-table .mt-row .month-col{
+        max-width: calc(100% - 60px);
+        margin-bottom: 10px;
+    }
+    .monthly-table .mt-row .price-col{
+        max-width: calc(50% - 30px);
+        margin-left: auto;
+    }
+    .monthly-table .mt-row .session-col{
+        max-width: calc(50% - 30px);
+    }
+    .card .main-block-wrap{
+        padding: 15px;
+        border-radius: 15px;
+    }
+    .card .main-block-wrap .tab-title{
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main-footer .main-footer-top-col-wrap h4{
+        font-size: 18px;
+    }
+    .main-footer {
+        padding: 15px 15px 30px;
+    }
+    .card-topics .card-topic-col{
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    .card-numbers .card-number-col {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .card-body-tab .card-body-tab-a {
+        font-size: 14px;
+        padding: 5px 15px;
+        border-radius: 50px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .monthly-table .mt-row .price-col{
+        max-width: calc(100% - 60px);
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    .monthly-table .mt-row .session-col{
+        max-width: calc(100% - 60px);
+        margin-left: auto;
+    }
+    .card-numbers .card-number-col {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
