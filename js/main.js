@@ -187,21 +187,21 @@ $.ajax({
                                     <div class="col-three card-topic-col">
                                         <h6>Introduction</h6>
                                         <ul>
-                                            <li>Irrational Nuymbers</li>
-                                            <li>Real Numbers and their Decimal</li>
-                                            <li>Expections</li>
-                                            <li>Represention Real Numbers on the </li>
-                                            <li>Number Line</li>
+                                            <li>Polynomials in One Variable</li>
+                                            <li>Zeroes of a Polynomials</li>
+                                            <li>Remainder Theorem</li>
+                                            <li>Factorisation of Polynomials</li>
+                                            <li>Algebraic identities</li>
                                         </ul>
                                     </div>
                                     <div class="col-three card-topic-col">
                                         <h6>Introduction</h6>
                                         <ul>
-                                            <li>Irrational Nuymbers</li>
-                                            <li>Real Numbers and their Decimal</li>
-                                            <li>Expections</li>
-                                            <li>Represention Real Numbers on the </li>
-                                            <li>Number Line</li>
+                                            <li>Polynomials in One Variable</li>
+                                            <li>Zeroes of a Polynomials</li>
+                                            <li>Remainder Theorem</li>
+                                            <li>Factorisation of Polynomials</li>
+                                            <li>Algebraic identities</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@ $( document ).ready(function() {
     $('#monthly-grade-select').change(function(){
         dropdown = $('#monthly-grade-select').val();
         //first hide all tabs again when a new option is selected
-        $('.card-body-tab-wrap').hide();
+        $('#monthly-tab .card-body-tab-wrap').hide();
         //then show the tab content of whatever option value was selected
         // $("input").trigger("click");
         console.log("#monthly"+dropdown.replace(/\s+/g, ''))
@@ -294,7 +294,7 @@ $( document ).ready(function() {
     $('#yearly-grade-select').change(function(){
         dropdown = $('#yearly-grade-select').val();
         //first hide all tabs again when a new option is selected
-        $('.card-body-tab-wrap').hide();
+        $('#yearly-tab .card-body-tab-wrap').hide();
         //then show the tab content of whatever option value was selected
         $("#yearly"+dropdown.replace(/\s+/g, '')).find('li:first-child a').trigger('click');
         $('#' + "yearly" + dropdown.replace(/\s+/g, '')).show();
@@ -302,10 +302,10 @@ $( document ).ready(function() {
 
     //=============Yearly Select Board Item==========
     $('.card-body-tab-a').click(function(){
-        $('.card-numbers').hide();
-        $('.monthly-table').hide();
-        $('.footer-top-wrapper').hide();
-        $('.card-body-tab-a.active').removeClass('active');
+        $(this).parents('.main-block').find('.card-numbers').hide();
+        $(this).parents('.main-block').find('.monthly-table').hide();
+        $(this).parents('.main-block').find('.footer-top-wrapper').hide();
+        $(this).parents('.main-block').find('.card-body-tab-a.active').removeClass('active');
         $(this).addClass('active');                
         var panel = $(this).attr('href');
         $("#"+panel).fadeIn(1000);
